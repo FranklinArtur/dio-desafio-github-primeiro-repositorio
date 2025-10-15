@@ -1,1 +1,47 @@
+#include <stdio.h>
 
+// Turma: ADS 2° SEMESTRE 
+// Autores:
+// Rebeca Zeri Marinho (R5949H5) - Líder
+// Gabriel Duarte (R6401F2)
+// Franklin Arthur da Costa (H7055G1)
+// Paola Vitória de Souza (F3646H8)
+
+int main() {
+    char mensagem[100] = "Erro: o valor nao pode ser negativo.";
+    char nome[100];
+    const float VALOR_EURO = 6.39; 
+    const float VALOR_DOLAR = 5.44;
+    float valor_real;
+
+    float conversao_dolar;
+    float conversao_euro;
+
+    printf("Digite o seu nome: \n");
+    scanf(" %99[^\n]", nome); 
+
+   
+    printf("Digite o valor em reais (R$): \n");
+    scanf("%f", &valor_real);
+
+    if (valor_real < 0) {
+        sprintf(mensagem, "Erro! O valor nao pode ser negativo.");
+    } else if (valor_real == 0) {
+        sprintf(mensagem, " 0 nao eh um valor valido para a conversao.");
+    } else {
+        sprintf(mensagem, "Conversao valida.");
+        conversao_dolar = valor_real / VALOR_DOLAR;
+        conversao_euro = valor_real / VALOR_EURO;
+    }
+
+    
+    printf("\nOla, %s!\n", nome);
+    printf("%s\n", mensagem);
+
+    if (valor_real > 0) {
+        printf("Valor convertido em dolares: USD %.2f\n", conversao_dolar);
+        printf("Valor convertido em euros: EUR %.2f\n", conversao_euro);
+    }
+
+    return 0;
+}
