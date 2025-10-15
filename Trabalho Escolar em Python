@@ -1,1 +1,70 @@
+# Programa: Operações com Vetor de 5 Números Inteiros
+# Objetivo: Ler 5 números inteiros, armazenar em um vetor e
+#           exibir soma, maior, menor e média aritmética.
 
+def ler_numeros(qtd):
+ 
+    numeros = []  
+    for i in range(qtd):
+        while True: 
+            try:
+                num = int(input(f"Digite o {i+1}º número inteiro: "))
+                numeros.append(num)
+                break
+            except ValueError:
+                print("Entrada inválida. Digite apenas números inteiros.")
+    return numeros
+
+
+def calcular_soma(vetor):
+    
+    soma = 0
+    for valor in vetor:
+        soma += valor
+    return soma
+
+
+def encontrar_maior(vetor):
+    
+    maior = vetor[0]
+    for valor in vetor:
+        if valor > maior:
+            maior = valor
+    return maior
+
+
+def encontrar_menor(vetor):
+    
+    menor = vetor[0]
+    for valor in vetor:
+        if valor < menor:
+            menor = valor
+    return menor
+
+
+def calcular_media(vetor):
+    
+    soma = calcular_soma(vetor)
+    return soma / len(vetor)
+
+
+def main():
+
+    print("=== Programa: Operações com Vetor de 5 Números Inteiros ===")
+    vetor = ler_numeros(5)
+
+    soma = calcular_soma(vetor)
+    maior = encontrar_maior(vetor)
+    menor = encontrar_menor(vetor)
+    media = calcular_media(vetor)
+
+    print("\n=== Resultados ===")
+    print(f"Vetor digitado: {vetor}")
+    print(f"Soma dos números: {soma}")
+    print(f"Maior número: {maior}")
+    print(f"Menor número: {menor}")
+    print(f"Média aritmética: {media:.2f}")
+
+
+if _name_ == "_main_":
+    main()
