@@ -1,11 +1,6 @@
 #include <stdio.h>
 
 // Turma: ADS 2° SEMESTRE 
-// Autores:
-// Rebeca Zeri Marinho (R5949H5) - Líder
-// Gabriel Duarte (R6401F2)
-// Franklin Arthur da Costa (H7055G1)
-// Paola Vitória de Souza (F3646H8)
 
 int main() {
     char mensagem[100] = "Erro: o valor nao pode ser negativo.";
